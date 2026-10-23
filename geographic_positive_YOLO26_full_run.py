@@ -1,3 +1,14 @@
+'''
+Training and Validation of Lunar Split Dataset on YOLO26-OBB
+
+Includes final preprocessing that converts the basemap chips from greyscale to RGB. Creates the yaml file. 
+Trains on yolo26n-obb and validates. Exports metrics, loss, weights, best/worst models for test use.
+
+Alexis Willson
+October 2026
+Queen's University
+'''
+
 from pathlib import Path
 from shutil import copy2
 
@@ -138,8 +149,6 @@ else:
 
 # LOADING MODEL.
 
-
-print(f"Using device: {DEVICE}")
 print(f"Training dataset: {RGB_DATA_YAML}")
 
 model = YOLO(MODEL_NAME)
